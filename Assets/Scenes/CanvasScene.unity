@@ -6192,16 +6192,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654806212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.996812, y: 1.996812, z: 1.996812}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000030517578}
+  m_LocalScale: {x: 1.9968119, y: 1.9968119, z: 1.9968119}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1455568896}
+  m_Father: {fileID: 1992033644}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57, y: 205.62}
+  m_AnchoredPosition: {x: -51.15004, y: 290.62}
   m_SizeDelta: {x: 94.1421, y: 20.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &654806214
@@ -7781,6 +7781,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758844003}
   m_CullTransparentMesh: 1
+--- !u!1 &759152287
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759152291}
+  - component: {fileID: 759152290}
+  - component: {fileID: 759152289}
+  - component: {fileID: 759152288}
+  m_Layer: 0
+  m_Name: EgressUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &759152288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759152287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd1a6d2e7f65c5448b4613b8e7d2b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskPanels:
+  - {fileID: 1551208638}
+  - {fileID: 1954520597}
+  - {fileID: 1922707312}
+  - {fileID: 1819903075}
+  stepsText:
+  - {fileID: 273015166}
+  - {fileID: 1342857248}
+  - {fileID: 1383766886}
+  ursaUIManager: {fileID: 1844152394}
+--- !u!114 &759152289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759152287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80b030b75d7463a4d978936f04e4dcc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 601632041}
+  ursaImage: {fileID: 1829312317}
+  ursaText: {fileID: 804377186}
+  userSpeakingSprite: {fileID: 21300000, guid: 05fea283c26690148afddc2f041c5630, type: 3}
+  ursaSpeakingSprite: {fileID: 21300000, guid: 0bebfd0332a3b5d41b4007a8a1457daf, type: 3}
+--- !u!114 &759152290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759152287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7869ba963263ae747959cae30a9db69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySuitPanel:
+    evaTimeText: {fileID: 336834645}
+    batteryText: {fileID: 799695993}
+    oxygenText: {fileID: 2025728053}
+    waterText: {fileID: 135917919}
+  partnerSuitPanel:
+    batteryText: {fileID: 875636455}
+    oxygenText: {fileID: 707583885}
+    waterText: {fileID: 723775330}
+  evaTaskPanel:
+    taskButtons: []
+    egressText: {fileID: 2032990002}
+--- !u!4 &759152291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759152287}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09662559, y: -0.19550909, z: -1.377538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &767641975
 GameObject:
   m_ObjectHideFlags: 0
@@ -7943,8 +8040,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769038693}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.996812, y: 1.996812, z: 1.996812}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000030517578}
+  m_LocalScale: {x: 1.9968116, y: 1.9968116, z: 1.9968116}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1114459306}
@@ -7957,11 +8054,11 @@ RectTransform:
   - {fileID: 316863078}
   - {fileID: 396793995}
   m_Father: {fileID: 1455568896}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000058413, y: 148}
+  m_AnchoredPosition: {x: -0.000086307526, y: 148}
   m_SizeDelta: {x: 150, y: 16.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769038695
@@ -15401,9 +15498,7 @@ RectTransform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1549294887}
-  - {fileID: 1801495895}
-  - {fileID: 654806213}
+  - {fileID: 1992033644}
   - {fileID: 769038694}
   - {fileID: 1551208639}
   - {fileID: 1954520598}
@@ -16133,16 +16228,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549294886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.16, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000030517578}
+  m_LocalScale: {x: 1.1599998, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1455568896}
+  m_Father: {fileID: 1992033644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.85, y: -84.99999}
+  m_AnchoredPosition: {x: 0.00004196167, y: -0}
   m_SizeDelta: {x: 301.7, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1549294888
@@ -16246,7 +16341,7 @@ RectTransform:
   - {fileID: 1342857246}
   - {fileID: 1383766884}
   m_Father: {fileID: 1455568896}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17935,16 +18030,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801495894}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.996812, y: 1.996812, z: 1.996812}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000030517578}
+  m_LocalScale: {x: 1.9968119, y: 1.9968119, z: 1.9968119}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1455568896}
+  m_Father: {fileID: 1992033644}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59, y: 208}
+  m_AnchoredPosition: {x: 64.84996, y: 293}
   m_SizeDelta: {x: 83.9949, y: 15.9595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1801495896
@@ -18151,7 +18246,7 @@ RectTransform:
   - {fileID: 469910850}
   - {fileID: 381018728}
   m_Father: {fileID: 1455568896}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18513,10 +18608,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844152392}
-  - component: {fileID: 1844152393}
   - component: {fileID: 1844152394}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: UrsaUIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18537,30 +18631,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1844152393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844152391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7869ba963263ae747959cae30a9db69e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mySuitPanel:
-    evaTimeText: {fileID: 336834645}
-    batteryText: {fileID: 799695993}
-    oxygenText: {fileID: 2025728053}
-    waterText: {fileID: 135917919}
-  partnerSuitPanel:
-    batteryText: {fileID: 875636455}
-    oxygenText: {fileID: 707583885}
-    waterText: {fileID: 723775330}
-  evaTaskPanel:
-    taskButtons: []
-    egressText: {fileID: 2032990002}
 --- !u!114 &1844152394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19301,7 +19371,7 @@ RectTransform:
   - {fileID: 2117387570}
   - {fileID: 712451829}
   m_Father: {fileID: 1455568896}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19522,7 +19592,7 @@ RectTransform:
   - {fileID: 1104230341}
   - {fileID: 1269781128}
   m_Father: {fileID: 1455568896}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19670,6 +19740,45 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 15, y: 15}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1992033643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992033644}
+  m_Layer: 5
+  m_Name: Egress Empty Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1992033644
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992033643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1549294887}
+  - {fileID: 1801495895}
+  - {fileID: 654806213}
+  m_Father: {fileID: 1455568896}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -5.8499985, y: -85}
+  m_SizeDelta: {x: 349.972, y: 650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1995490438
 GameObject:
@@ -20052,6 +20161,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025728051}
   m_CullTransparentMesh: 1
+--- !u!1 &2030060080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030060083}
+  - component: {fileID: 2030060082}
+  m_Layer: 0
+  m_Name: HeaderUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2030060082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030060080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7869ba963263ae747959cae30a9db69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySuitPanel:
+    evaTimeText: {fileID: 336834645}
+    batteryText: {fileID: 799695993}
+    oxygenText: {fileID: 2025728053}
+    waterText: {fileID: 135917919}
+  partnerSuitPanel:
+    batteryText: {fileID: 875636455}
+    oxygenText: {fileID: 707583885}
+    waterText: {fileID: 723775330}
+  evaTaskPanel:
+    taskButtons: []
+    egressText: {fileID: 2032990002}
+--- !u!4 &2030060083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030060080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.09662559, y: -0.19550909, z: -1.377538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032990000
 GameObject:
   m_ObjectHideFlags: 0

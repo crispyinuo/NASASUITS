@@ -19,12 +19,12 @@ public class UrsaUIManager : MonoBehaviour
         SetVisibility(3);
     }
 
-    public void setText(string text)
+    private void setText(string text)
     {
         ursaText.text = text;
     }
 
-    public void SetVisibility(int state)
+    private void SetVisibility(int state)
     {
         switch (state)
         {
@@ -49,6 +49,18 @@ public class UrsaUIManager : MonoBehaviour
                 Debug.LogError("Unsupported state");
                 break;
         }
+    }
+
+    public void setOutputText(string outputText)
+    {
+        setText(outputText);
+        SetVisibility(2);
+    }
+
+    public void setInputText(string inputText)
+    {
+        setText(outputText);
+        SetVisibility(1);
     }
 
 }
