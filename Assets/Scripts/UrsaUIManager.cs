@@ -59,7 +59,7 @@ public class UrsaUIManager : MonoBehaviour
 
     public void setInputText(string inputText)
     {
-        setText(outputText);
+        setText(inputText);
         SetVisibility(1);
     }
 
