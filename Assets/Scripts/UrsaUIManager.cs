@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows.Speech;
 
 
 public class UrsaUIManager : MonoBehaviour
@@ -12,11 +13,84 @@ public class UrsaUIManager : MonoBehaviour
     public TextMeshProUGUI ursaText;
     public Sprite userSpeakingSprite;
     public Sprite ursaSpeakingSprite;
+    private KeywordRecognizer keywordRecognizer;
+    private DictationRecognizer dictationRecognizer;
+    private bool isListening = false;
 
     // Hide everything initially
     void Start()
     {
         SetVisibility(3);
+        InitializeSpeechRecognition();
+    }
+
+    private void InitializeSpeechRecognition()
+    {
+        // Keyword recognition for "Ursa"
+        keywordRecognizer = new KeywordRecognizer(new string[] { "Ursa" });
+        keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+        keywordRecognizer.Start();
+
+        // Dictation recognizer setup
+        dictationRecognizer = new DictationRecognizer();
+        dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
+        dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
+        dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
+        dictationRecognizer.DictationError += DictationRecognizer_DictationError;
+    }
+
+    private void OnDestroy()
+    {
+        if (keywordRecognizer != null && keywordRecognizer.IsRunning)
+        {
+            keywordRecognizer.Stop();
+            keywordRecognizer.Dispose();
+        }
+
+        if (dictationRecognizer != null)
+        {
+            if (dictationRecognizer.Status == SpeechSystemStatus.Running)
+                dictationRecognizer.Stop();
+
+            dictationRecognizer.Dispose();
+        }
+    }
+
+    private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
+    {
+        if (!isListening)
+        {
+            isListening = true;
+            dictationRecognizer.Start();
+            SetVisibility(1); // User starts speaking
+        }
+    }
+
+    private void DictationRecognizer_DictationResult(string text, ConfidenceLevel confidence)
+    {
+        // Set the recognized text
+        setInputText(text);
+        isListening = false;
+        dictationRecognizer.Stop();
+    }
+
+    private void DictationRecognizer_DictationHypothesis(string text)
+    {
+        // Update text with ongoing dictation results
+        setInputText(text);
+    }
+
+    private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
+    {
+        if (cause != DictationCompletionCause.Complete)
+            Debug.LogError("Dictation stopped unexpectedly: " + cause);
+        isListening = false;
+    }
+
+    private void DictationRecognizer_DictationError(string error, int hresult)
+    {
+        Debug.LogError("Dictation error: " + error);
+        isListening = false;
     }
 
     private void setText(string text)
