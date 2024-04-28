@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 using UnityEngine.Windows.Speech;
-
+using Microsoft.MixedReality.Toolkit.Audio;
 
 public class UrsaUIManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class UrsaUIManager : MonoBehaviour
     public TextMeshProUGUI ursaText;
     public Sprite userSpeakingSprite;
     public Sprite ursaSpeakingSprite;
+    private TextToSpeech textToSpeech;
     private KeywordRecognizer keywordRecognizer;
     private DictationRecognizer dictationRecognizer;
     private bool isListening = false;
@@ -22,6 +24,11 @@ public class UrsaUIManager : MonoBehaviour
     {
         SetVisibility(3);
         InitializeSpeechRecognition();
+    }
+
+    private void Awake()
+    {
+        textToSpeech = GetComponent<TextToSpeech>();
     }
 
     private void InitializeSpeechRecognition()
@@ -129,6 +136,7 @@ public class UrsaUIManager : MonoBehaviour
     {
         setText(outputText);
         SetVisibility(2);
+        textToSpeech.StartSpeaking(outputText);
     }
 
     public void setInputText(string inputText)
