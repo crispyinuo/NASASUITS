@@ -7822,6 +7822,16 @@ MonoBehaviour:
   - {fileID: 1342857248}
   - {fileID: 1383766886}
   ursaUIManager: {fileID: 1844152394}
+  taskHighlights:
+  - {fileID: 976273410}
+  - {fileID: 1909943579}
+  - {fileID: 1536919723}
+  - {fileID: 1908781067}
+  - {fileID: 503365584}
+  - {fileID: 194311150}
+  - {fileID: 2116641947}
+  - {fileID: 596576466}
+  - {fileID: 1305449064}
 --- !u!114 &759152289
 MonoBehaviour:
   m_ObjectHideFlags: 0

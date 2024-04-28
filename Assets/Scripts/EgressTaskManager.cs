@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EgressTaskManager : MonoBehaviour
 {
     public GameObject[] taskPanels;
     public TextMeshProUGUI[] stepsText;
     public UrsaUIManager ursaUIManager;
+    public Image[] taskHighlights;
     Color32 defaultColor = new Color32(255, 255, 255, 100);
 
     void Start()
@@ -29,10 +31,20 @@ public class EgressTaskManager : MonoBehaviour
         }
     }
 
+    void HideAllHighlights()
+    {
+        foreach (var highlight in taskHighlights)
+        {
+            highlight.gameObject.SetActive(false);
+        }
+    }
+
     void ShowTask(int taskIndex)
     {
         HideAllTasks();
         taskPanels[taskIndex].SetActive(true);
+        HideAllHighlights();
+        taskHighlights[taskIndex].gameObject.SetActive(true);
     }
 
     void HighlightStep(int stepIndex)
