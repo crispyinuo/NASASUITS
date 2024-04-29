@@ -83,28 +83,28 @@ public class EgressTaskManager : MonoBehaviour
     }
     void on_egress_menu_do_subtask_2_HMD(string display_string)
     {
-        ShowTask(0);
+        ShowTask(1);
         HighlightStep(0, task2StepsText);
         ursaUIManager.setOutputText(display_string);
     }
 
     void on_egress_menu_do_subtask_3a_HMD(string display_string)
     {
-        ShowTask(0);
+        ShowTask(2);
         HighlightStep(0, task3StepsText);
         ursaUIManager.setOutputText(display_string);
     }
 
     void on_egress_menu_do_subtask_3b_HMD(string display_string)
     {
-        ShowTask(0);
+        ShowTask(2);
         HighlightStep(1, task3StepsText);
         ursaUIManager.setOutputText(display_string);
     }
 
     void on_egress_menu_do_subtask_3c_HMD(string display_string)
     {
-        ShowTask(0);
+        ShowTask(2);
         HighlightStep(2, task3StepsText);
         ursaUIManager.setOutputText(display_string);
     }
