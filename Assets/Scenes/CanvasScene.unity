@@ -7869,10 +7869,16 @@ MonoBehaviour:
   - {fileID: 1954520597}
   - {fileID: 1922707312}
   - {fileID: 1819903075}
-  stepsText:
+  task1StepsText:
   - {fileID: 273015166}
   - {fileID: 1342857248}
   - {fileID: 1383766886}
+  task2StepsText:
+  - {fileID: 1104230343}
+  task3StepsText:
+  - {fileID: 79509306}
+  - {fileID: 1371213238}
+  - {fileID: 2117387572}
   ursaUIManager: {fileID: 1844152394}
   taskHighlights:
   - {fileID: 976273410}
