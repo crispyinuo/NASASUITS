@@ -7792,7 +7792,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 759152291}
-  - component: {fileID: 759152290}
   - component: {fileID: 759152288}
   m_Layer: 0
   m_Name: EgressUIManager
@@ -7833,30 +7832,6 @@ MonoBehaviour:
   - {fileID: 2116641947}
   - {fileID: 596576466}
   - {fileID: 1305449064}
---- !u!114 &759152290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759152287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7869ba963263ae747959cae30a9db69e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mySuitPanel:
-    evaTimeText: {fileID: 336834645}
-    batteryText: {fileID: 799695993}
-    oxygenText: {fileID: 2025728053}
-    waterText: {fileID: 135917919}
-  partnerSuitPanel:
-    batteryText: {fileID: 875636455}
-    oxygenText: {fileID: 707583885}
-    waterText: {fileID: 723775330}
-  evaTaskPanel:
-    taskButtons: []
-    egressText: {fileID: 2032990002}
 --- !u!4 &759152291
 Transform:
   m_ObjectHideFlags: 0
