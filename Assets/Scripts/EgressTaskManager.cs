@@ -17,7 +17,6 @@ public class EgressTaskManager : MonoBehaviour
     public UrsaUIManager ursaUIManager;
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
-    Color32 dnoHighlightGreenColor = new Color32(255, 255, 255, 100);
 
     void Start()
     {
