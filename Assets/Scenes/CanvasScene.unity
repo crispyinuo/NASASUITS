@@ -3503,7 +3503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &381018728
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4599,7 +4599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &469910850
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7879,6 +7879,20 @@ MonoBehaviour:
   - {fileID: 79509306}
   - {fileID: 1371213238}
   - {fileID: 2117387572}
+  task4SubPanels:
+  - {fileID: 653301074}
+  - {fileID: 469910849}
+  - {fileID: 381018727}
+  task4aStepsText:
+  - {fileID: 22888095}
+  - {fileID: 516643587}
+  - {fileID: 1146321081}
+  - {fileID: 1471444791}
+  task4bStepsText:
+  - {fileID: 479513499}
+  - {fileID: 1118738293}
+  - {fileID: 144783271}
+  - {fileID: 570602424}
   ursaUIManager: {fileID: 1844152394}
   taskHighlights:
   - {fileID: 976273410}
