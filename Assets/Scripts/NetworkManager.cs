@@ -1,5 +1,6 @@
 using System.Collections;
 using WebSocketSharp;
+using WebSocketSharp.Net;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,30 +15,50 @@ public class NetworkManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        webSocket = new WebSocket("ws://f4e8-2600-387-f-6118-00-3.ngrok-free.app");
-        Debug.Log("Hey");
+        webSocket = new WebSocket("wss://free-square-garfish.ngrok-free.app");
+        webSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+        webSocket.SslConfiguration.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
         webSocket.OnOpen += (sender, e) => {Debug.Log("Opened connection!");};
         webSocket.OnError += (sender, e) => {Debug.Log("Error: " + e.Message);};
         webSocket.OnMessage += (sender, e) => 
         {
-            Debug.Log("Message Received from " + ((WebSocket)sender).Url + ", Data : " + e.Data);
+            Debug.Log($"Message Received, Data : {e.Data}");
+        };
+        webSocket.OnClose += (sender, e) =>
+        {
+            Debug.Log("Connection Closed.");
         };
         webSocket.Connect();
+        Debug.Log(webSocket.ReadyState);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (webSocket == null || !webSocket.IsAlive)
-        {
-            return;
-        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            UserCommand command = new UserCommand();
-            command.user_input = "do task one a";
-            webSocket.Send(JsonUtility.ToJson(command));
-            Debug.Log("Sent!");
+            sendCommand("ur sah, do task one a");
         }
+    }
+
+    void OnDestroy()
+    {
+        if (webSocket != null)
+        {
+            webSocket.Close();
+        }
+    }
+
+    public void sendCommand(string message)
+    {
+        if (webSocket == null || !webSocket.IsAlive)
+        {
+            Debug.Log("Command is not sent!!! The websocket is not alive:(");
+            return;
+        }
+        UserCommand command = new UserCommand();
+        command.user_input = message;
+        webSocket.Send(JsonUtility.ToJson(command));
+        Debug.Log($"Command sent: {message}");
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 
+/*
 [CustomEditor(typeof(NavigationManager))]
 public class NavigationManagerEditor : Editor
 {
@@ -24,6 +25,7 @@ public class NavigationManagerEditor : Editor
         }
     }
 }
+*/
 
 public class NavigationManager : MonoBehaviour
 {

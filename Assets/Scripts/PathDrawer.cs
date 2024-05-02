@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor; 
+using UnityEditor;
+/*
 [CustomEditor(typeof(PathDrawer))]
 public class PathDrawerEditor : Editor
 {
@@ -24,6 +25,7 @@ public class PathDrawerEditor : Editor
         }
     }
 }
+*/
 
 public class PathDrawer : MonoBehaviour
 {
