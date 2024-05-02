@@ -77,6 +77,63 @@ public class EgressTaskManager : MonoBehaviour
         // Highlight the current step
         stepsText[stepIndex].color = Color.white;
     }
+    public void ExecuteTask(string functionName, string displayString)
+    {
+        switch (functionName)
+        {
+            case "on_egress_menu_do_subtask_1a_HMD":
+                on_egress_menu_do_subtask_1a_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_1b_HMD":
+                on_egress_menu_do_subtask_1b_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_1c_HMD":
+                on_egress_menu_do_subtask_1c_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_2_HMD":
+                on_egress_menu_do_subtask_2_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_3a_HMD":
+                on_egress_menu_do_subtask_3a_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_3b_HMD":
+                on_egress_menu_do_subtask_3b_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_3c_HMD":
+                on_egress_menu_do_subtask_3c_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4a1_HMD":
+                on_egress_menu_do_subtask_4a1_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4a2_HMD":
+                on_egress_menu_do_subtask_4a2_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4a3_HMD":
+                on_egress_menu_do_subtask_4a3_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4a4_HMD":
+                on_egress_menu_do_subtask_4a4_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4b1_HMD":
+                on_egress_menu_do_subtask_4b1_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4b2_HMD":
+                on_egress_menu_do_subtask_4b2_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4b3_HMD":
+                on_egress_menu_do_subtask_4b3_HMD(displayString);
+                break;
+            case "on_egress_menu_do_subtask_4b4_HMD":
+                on_egress_menu_do_subtask_4b4_HMD(displayString);
+                break;
+            case "onEgressMenuDoSubtask4c":
+                onEgressMenuDoSubtask4c(displayString);
+                break;
+            default:
+                Debug.Log("Function name does not match any defined method");
+                break;
+        }
+    }
 
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)
     {

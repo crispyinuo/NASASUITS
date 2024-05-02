@@ -16,6 +16,7 @@ enum SPEAKING_STATE {
 public class UrsaUIManager : MonoBehaviour
 {
     public GameObject panel;
+    public GameObject networkManager;
     public Image ursaImage;
     public TextMeshProUGUI ursaText;
     public Sprite userSpeakingSprite;
@@ -118,7 +119,7 @@ public class UrsaUIManager : MonoBehaviour
 
     private KeywordRecognizer get_new_keywordRecognizer()
     {
-        KeywordRecognizer result = new KeywordRecognizer(new string[] { "Hello" });
+        KeywordRecognizer result = new KeywordRecognizer(new string[] { "Hello", "Bear", "Ursa" });
         result.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
         return result;
     }
@@ -130,7 +131,8 @@ public class UrsaUIManager : MonoBehaviour
         dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
         dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
         dictationRecognizer.DictationError += DictationRecognizer_DictationError;
-        dictationRecognizer.AutoSilenceTimeoutSeconds = 5f;
+        dictationRecognizer.AutoSilenceTimeoutSeconds = 3f;
+        dictationRecognizer.InitialSilenceTimeoutSeconds = 8f;
         return dictationRecognizer;
     }
 
@@ -167,6 +169,8 @@ public class UrsaUIManager : MonoBehaviour
         isListening = false;
         speakingState = SPEAKING_STATE.NO_ONE_SPEAKING;
         Debug.Log("Result: " + text);
+        NetworkManager network = networkManager.GetComponent<NetworkManager>();
+        network.sendCommand(text);
     }
 
     private void DictationRecognizer_DictationHypothesis(string text)
@@ -179,7 +183,11 @@ public class UrsaUIManager : MonoBehaviour
     private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
     {
         if (cause != DictationCompletionCause.Complete)
+        {
             Debug.LogError("Dictation stopped unexpectedly: " + cause);
+            NetworkManager network = networkManager.GetComponent<NetworkManager>();
+            network.sendCommand(ursaText.text);
+        }
         isListening = false;
         speakingState = SPEAKING_STATE.NO_ONE_SPEAKING;
     }

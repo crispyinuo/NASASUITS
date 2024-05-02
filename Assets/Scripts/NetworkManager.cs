@@ -1,16 +1,33 @@
 using System.Collections;
+using System;
 using WebSocketSharp;
 using WebSocketSharp.Net;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class UserCommand
 {
     public string user_input;
 }
 
+[Serializable]
+public class NetworkResponseParameter
+{
+    public string display_string;
+}
+
+[Serializable]
+public class NetworkResponse
+{
+    public string function;
+    public NetworkResponseParameter parameter;
+}
+
 public class NetworkManager : MonoBehaviour
 {
+    public GameObject egressTaskManager;
+    private NetworkResponse response;
     WebSocket webSocket;
     // Start is called before the first frame update
     void Start()
@@ -23,12 +40,14 @@ public class NetworkManager : MonoBehaviour
         webSocket.OnMessage += (sender, e) => 
         {
             Debug.Log($"Message Received, Data : {e.Data}");
+            response = JsonUtility.FromJson<NetworkResponse>(e.Data);     
         };
         webSocket.OnClose += (sender, e) =>
         {
             Debug.Log("Connection Closed.");
         };
         webSocket.Connect();
+        webSocket.WaitTime = System.TimeSpan.MaxValue;
         Debug.Log(webSocket.ReadyState);
     }
 
@@ -37,7 +56,13 @@ public class NetworkManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            sendCommand("ur sah, do task one a");
+           sendCommand("ur sah, do task one b");
+        }
+        if (response != null)
+        {
+            EgressTaskManager manager = egressTaskManager.GetComponent<EgressTaskManager>();
+            manager.ExecuteTask(response.function, response.parameter.display_string);
+            response = null;
         }
     }
 
