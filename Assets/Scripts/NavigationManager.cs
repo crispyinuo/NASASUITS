@@ -58,9 +58,9 @@ public class NavigationManager : MonoBehaviour
 
     public void ClearUserPositionData()
     {
-        if (userPositionData != null && userPositionData.position.Count!= 0 )
+        if (userPositionData != null && userPositionData.positions.Count!= 0 )
         {
-            userPositionData.position.Clear();
+            userPositionData.positions.Clear();
         }
     }
     public void StopRecordUserPosition()
