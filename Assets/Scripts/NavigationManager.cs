@@ -34,11 +34,8 @@ public class NavigationManagerEditor : Editor
 public class NavigationManager : MonoBehaviour
 {
     public GetUserPosition userPositionRecorder;
-
     public UserPositionData userPositionData;
-    // Reference to the shortest way back calculator
     public GetShortestWayBack shortestWayBackCalculator;
-    // Reference to the path renderer
     public PathRenderer pathRenderer;
     public Vector3 nextPosition;
     //user position will be recorded the whole time but when the user reset or went back home it should clear all the stored data 
@@ -72,7 +69,7 @@ public class NavigationManager : MonoBehaviour
     public void ShowWayBack()
     {
        
-          if (pathRenderer != null && shortestWayBackCalculator != null)
+          if (pathRenderer != null && shortestWayBackCalculator != null && userPositionData != null && userPositionData.positions.Count!= 0 )
         {
             // Get the current position of the user
             Vector3 currentPosition = userPositionData.positions.Last();
