@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 
-/*
+
 [CustomEditor(typeof(NavigationManager))]
 public class NavigationManagerEditor : Editor
 {
@@ -14,7 +14,7 @@ public class NavigationManagerEditor : Editor
 
         NavigationManager navigationManager = (NavigationManager)target; // Get the reference to the PathDrawer
 
-        if (GUILayout.Button("Start"))
+        if (GUILayout.Button("Start Record User Position"))
         {
             navigationManager.StartRecordUserPosition();
         }
@@ -23,9 +23,13 @@ public class NavigationManagerEditor : Editor
         {
             navigationManager.ShowWayBack();
         }
+        if (GUILayout.Button("Clear User Position"))
+        {
+            navigationManager.ClearUserPositionData();
+        }
     }
 }
-*/
+
 
 public class NavigationManager : MonoBehaviour
 {
@@ -37,7 +41,7 @@ public class NavigationManager : MonoBehaviour
     // Reference to the path renderer
     public PathRenderer pathRenderer;
     public Vector3 nextPosition;
-
+    //user position will be recorded the whole time but when the user reset or went back home it should clear all the stored data 
     public void StartRecordUserPosition()
     {
         // // Ensure the userPositionRecorder reference is set
@@ -51,6 +55,14 @@ public class NavigationManager : MonoBehaviour
         // userPositionRecorder.enabled = true;
     }
 
+
+    public void ClearUserPositionData()
+    {
+        if (userPositionData != null && userPositionData.position.Count!= 0 )
+        {
+            userPositionData.position.Clear();
+        }
+    }
     public void StopRecordUserPosition()
     {
         // Stop recording user positions
