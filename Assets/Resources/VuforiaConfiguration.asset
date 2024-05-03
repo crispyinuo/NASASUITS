@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vuforia:
     vuforiaLicenseKey: 
-    ufoLicenseKey: QVhiM0Y1Ly8vLy8vQUFBQUtPbnFIeHJFSGs1N3VrMlg4U050eVBzK2pkOFZxMDhrazlwYjBsYS9aZUIxQlV1ckZWcWt0ZllSQWpnT2tIRlY2VzdOMDRTRjNYRUhmbTF5L1BnYlB4eWdHWEF6RUNheXowc3dyNVNYa2ozdERuRjhka1FpOHRscHdkMDcrcEJEY1FjTjNJcUM1bEgwOTYzQkdZdjRsQStRb0hSQU9nRGthelp5TlY0WHVwWU9EaE05NWw5bXAzbnBDMjM5MWZBWXBFdEdiL2loTDNab3N4b25ZblhjK1JtSS9wLzRoTDIwVGhmTXR6WFJNYkpUTXZLZzJoQ0N0TEJXNEptZ0pSOUtSdStzQWM3QjVNOWFFMGVHQ1dUT1VRSUUweEpiZC9ZL2cvS29iNDhBRXdQOGFwbWR5NmRWU0FHU2psVzRZY2FEU2Zud3J1ZHhucVNmSUZiajNTUnIzM0lKVlFIaW1rL0oyOGNFeDdyekcySXg=
+    ufoLicenseKey: QWJEQ3pLLy8vLy8vQUFBQUtJM1NZOHRnRGtjdW9GTi95VWdqeTRnbk9HU1FWY241K1pFTGxXTUJtNk5lUXdhak9TVTNQa0N0RUdySVNYdGNGcFdacHhjNmtVVWwxa3NHMG1Ua1g4Z2dnUERycFlwb3pUaUxEajJjOExBbzBlNFNDcTZSbEZjVU5IYjR5SkgyemVpeUtyci9YdXdLR1U5UERVaWptNTJDQ1VrenJ2dFVsekg0RWdLcERIOUtSRjNlMFppbEt0UXQ0Tk04RjQ5UXhzTkJoVFp6Q2ZBS3pueWhjL20xMjEydVlOYjJvYlB1NDQzSTNyWm52WFJmV3AxU3NWMUEwS0ZqVFBFajl2U0dhdDlrUGVIUUFmc1A3ZVdHd1dNdjhRZk9obWNaam54QldEd1IxRFdpKysraTd3a3h4Q2ptclBSclFOaVhGeDJCVmdObnRXZGtTbnMwSzF0U3lPeUk2WElXSW5GSDZudWpCQU5pMVBsUDFPSWQ=
     delayedInitialization: 0
     cameraFocusModeSetting: 2
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 1
+    maxSimultaneousImageTargets: 4
     virtualSceneScaleFactor: 1
     modelTargetRecoWhileExtendedTracked: 1
     shareRecordingsInITunes: 0
     logLevel: 0
-    version: 10.0.2
+    version: 10.16.0
     eulaAcceptedVersions: '{"Values":[""]}'
   database:
     disableModelExtraction: 0
@@ -42,8 +42,8 @@ MonoBehaviour:
     videoBackgroundEnabled: 1
   deviceTracker:
     autoStartTracker: 1
-    arcoreRequirement: 1
-    autoImportArcore: 1
+    arcoreRequirement: 0
+    autoImportArcore: 0
     thirdPartyARCoreClientDetected: 0
   playmode:
     mRecordingPath: 
@@ -51,4 +51,4 @@ MonoBehaviour:
   webcam:
     renderTextureLayer: 30
   packageInformation:
-    ARFoundationVersion: 
+    ARFoundationVersion: 5.0.6
