@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-[CustomEditor(typeof(UserController))]
-public class UserControllerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector(); // Draws the default inspector
+// [CustomEditor(typeof(UserController))]
+// public class UserControllerEditor : Editor
+// {
+//     public override void OnInspectorGUI()
+//     {
+//         DrawDefaultInspector(); // Draws the default inspector
 
-        UserController script = (UserController)target;
+//         UserController script = (UserController)target;
 
-        if (GUILayout.Button("Up"))
-        {
-            script.MoveUp();
-        }
-        if (GUILayout.Button("Down"))
-        {
-            script.MoveDown();
-        }
-        if (GUILayout.Button("Left"))
-        {
-            script.MoveLeft();
-        }
-        if (GUILayout.Button("Right"))
-        {
-            script.MoveRight();
-        }
-    }
-}
+//         if (GUILayout.Button("Up"))
+//         {
+//             script.MoveUp();
+//         }
+//         if (GUILayout.Button("Down"))
+//         {
+//             script.MoveDown();
+//         }
+//         if (GUILayout.Button("Left"))
+//         {
+//             script.MoveLeft();
+//         }
+//         if (GUILayout.Button("Right"))
+//         {
+//             script.MoveRight();
+//         }
+//     }
+// }
 public class UserController : MonoBehaviour
 {
     public float speed = 5.0f;

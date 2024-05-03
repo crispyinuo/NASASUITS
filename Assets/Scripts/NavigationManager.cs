@@ -5,30 +5,30 @@ using UnityEditor;
 using System.Linq;
 
 
-[CustomEditor(typeof(NavigationManager))]
-public class NavigationManagerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector(); // Draws the default inspector
+// [CustomEditor(typeof(NavigationManager))]
+// public class NavigationManagerEditor : Editor
+// {
+//     public override void OnInspectorGUI()
+//     {
+//         DrawDefaultInspector(); // Draws the default inspector
 
-        NavigationManager navigationManager = (NavigationManager)target; // Get the reference to the PathDrawer
+//         NavigationManager navigationManager = (NavigationManager)target; // Get the reference to the PathDrawer
 
-        if (GUILayout.Button("Start Record User Position"))
-        {
-            navigationManager.StartRecordUserPosition();
-        }
+//         if (GUILayout.Button("Start Record User Position"))
+//         {
+//             navigationManager.StartRecordUserPosition();
+//         }
 
-        if (GUILayout.Button("ShowWayBack"))
-        {
-            navigationManager.ShowWayBack();
-        }
-        if (GUILayout.Button("Clear User Position"))
-        {
-            navigationManager.ClearUserPositionData();
-        }
-    }
-}
+//         if (GUILayout.Button("ShowWayBack"))
+//         {
+//             navigationManager.ShowWayBack();
+//         }
+//         if (GUILayout.Button("Clear User Position"))
+//         {
+//             navigationManager.ClearUserPositionData();
+//         }
+//     }
+// }
 
 
 public class NavigationManager : MonoBehaviour
@@ -39,6 +39,10 @@ public class NavigationManager : MonoBehaviour
     public PathRenderer pathRenderer;
     public Vector3 nextPosition;
     //user position will be recorded the whole time but when the user reset or went back home it should clear all the stored data 
+    void Start(){
+        //when game start, it will reset the data
+        ClearUserPositionData();
+    }
     public void StartRecordUserPosition()
     {
         // // Ensure the userPositionRecorder reference is set

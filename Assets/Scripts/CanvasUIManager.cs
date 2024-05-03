@@ -19,11 +19,13 @@ public class CanvasUIManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
+
     void Start()
     {
+        // can be comment out2
         HideAllPanels();
         ShowHeaderPanel();
-        ShowPanel(0); //default to show egress, can be deleted after testing
+        ShowPanel(1); //default to show egress, can be deleted after testing
     }
 
     // Update is called once per frame
