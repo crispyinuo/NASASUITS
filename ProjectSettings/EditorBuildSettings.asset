@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/QuadsScene.unity
-    guid: 23c1f1c3b8e688848819a42797c6eea9
   - enabled: 1
-    path: Assets/Scenes/CanvasScene.unity
-    guid: 353ca3612c7fa8c4db9e6c316c87dcc1
+    path: Assets/SamplesResources/Scenes/0-Main.unity
+    guid: a09cb257d566c489595b16ab37547666
   m_configObjects:
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2daf5bcda3e28cb44a0e9210e6a91b10, type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 570a9e9765daea34b93940bca639e806, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 570a9e9765daea34b93940bca639e806,
+      type: 2}
