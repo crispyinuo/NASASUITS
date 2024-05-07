@@ -13,7 +13,10 @@ public class EgressTaskManager : MonoBehaviour
     public GameObject[] task4SubPanels;
     public TextMeshProUGUI[] task4aStepsText;
     public TextMeshProUGUI[] task4bStepsText;
-
+    public GameObject[] task5SubPanels;
+    public TextMeshProUGUI[] task5bStepsText;
+    public TextMeshProUGUI[] task5cStepsText;
+    public TextMeshProUGUI[] task6StepsText;
     public UrsaUIManager ursaUIManager;
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
@@ -126,8 +129,8 @@ public class EgressTaskManager : MonoBehaviour
             case "on_egress_menu_do_subtask_4b4_HMD":
                 on_egress_menu_do_subtask_4b4_HMD(displayString);
                 break;
-            case "onEgressMenuDoSubtask4c":
-                onEgressMenuDoSubtask4c(displayString);
+            case "on_egress_menu_do_subtask_4c_HMD":
+                on_egress_menu_do_subtask_4c_HMD(displayString);
                 break;
             default:
                 Debug.Log("Function name does not match any defined method");
@@ -239,10 +242,71 @@ public class EgressTaskManager : MonoBehaviour
         HighlightStep(3, task4aStepsText);
         ursaUIManager.setOutputText(display_string);
     }
-    public void onEgressMenuDoSubtask4c(string display_string)
+    public void on_egress_menu_do_subtask_4c_HMD(string display_string)
     {
         ShowTask(3);
         ShowSubTask(2, task4SubPanels);
         ursaUIManager.setOutputText(display_string);
     }
+    public void on_egress_menu_do_subtask_5a_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(0, task5SubPanels);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_5b1_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(1, task5SubPanels);
+        HighlightStep(0, task5bStepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_5b2_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(1, task5SubPanels);
+        HighlightStep(1, task5bStepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_5b3_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(1, task5SubPanels);
+        HighlightStep(2, task5bStepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_5c1_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(2, task5SubPanels);
+        HighlightStep(0, task5cStepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_5c2_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(2, task5SubPanels);
+        HighlightStep(1, task5cStepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_5c3_HMD(string display_string)
+    {
+        ShowTask(4);
+        ShowSubTask(2, task5SubPanels);
+        HighlightStep(2, task5cStepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_6a_HMD(string display_string)
+    {
+        ShowTask(5);
+        HighlightStep(0, task6StepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+    public void on_egress_menu_do_subtask_6b_HMD(string display_string)
+    {
+        ShowTask(5);
+        HighlightStep(1, task6StepsText);
+        ursaUIManager.setOutputText(display_string);
+    }
+
 }
