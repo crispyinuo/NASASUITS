@@ -22,7 +22,7 @@ public class CanvasUIManager : MonoBehaviour
 
     void Start()
     {
-        // can be comment out2
+        // can be comment out
         HideAllPanels();
         show_top_menu();
         ShowPanel(1); //default to show egress, can be deleted after testing
@@ -42,9 +42,11 @@ public class CanvasUIManager : MonoBehaviour
         }
     }
 
-    // 0 => EVATaskPanel
+    // 0 => DetailsPanel
     // 1 => NavigationSystem
-    // 2 => DetailsPanel
+    // 2 => Egress
+    // 3 => Ingress
+
     void ShowPanel(int panelIndex)
     {
         HideAllPanels();
@@ -76,6 +78,6 @@ public class CanvasUIManager : MonoBehaviour
 
     public void on_suits_open_my_suit_HMD()
     {
-        ShowPanel(2);
+        ShowPanel(0);
     }
 }
