@@ -24,7 +24,7 @@ public class CanvasUIManager : MonoBehaviour
     {
         // can be comment out2
         HideAllPanels();
-        ShowHeaderPanel();
+        show_top_menu();
         ShowPanel(1); //default to show egress, can be deleted after testing
     }
 
@@ -56,11 +56,11 @@ public class CanvasUIManager : MonoBehaviour
         UIPanels[panelIndex].SetActive(false);
     }
 
-    void ShowHeaderPanel()
+    void show_top_menu()
     {
         headerPanel.SetActive(true);
     }
-    void HideHeaderPanel()
+    void hide_top_menu()
     {
         headerPanel.SetActive(false);
     }
@@ -72,5 +72,10 @@ public class CanvasUIManager : MonoBehaviour
     void HideToast()
     {
         toast.toastGameObject.SetActive(false);
+    }
+
+    public void on_suits_open_my_suit_HMD()
+    {
+        ShowPanel(2);
     }
 }

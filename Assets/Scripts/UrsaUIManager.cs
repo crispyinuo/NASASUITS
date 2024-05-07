@@ -7,7 +7,8 @@ using System.Linq;
 using UnityEngine.Windows.Speech;
 using Microsoft.MixedReality.Toolkit.Audio;
 
-enum SPEAKING_STATE {
+enum SPEAKING_STATE
+{
     USER_SPEAKING,
     URSA_SPEAKING,
     NO_ONE_SPEAKING
@@ -242,6 +243,11 @@ public class UrsaUIManager : MonoBehaviour
     {
         setText(inputText);
         speakingState = SPEAKING_STATE.USER_SPEAKING;
+    }
+
+    public void on_suits_get_incorrect_request_HMD()
+    {
+        setOutputText("Incorrect data request, please refine your question");
     }
 
 }
