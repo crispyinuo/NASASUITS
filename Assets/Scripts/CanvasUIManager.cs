@@ -22,9 +22,9 @@ public class CanvasUIManager : MonoBehaviour
 
     void Start()
     {
-        // can be comment out2
+        // can be comment out
         HideAllPanels();
-        ShowHeaderPanel();
+        show_top_menu();
         ShowPanel(1); //default to show egress, can be deleted after testing
     }
 
@@ -42,9 +42,11 @@ public class CanvasUIManager : MonoBehaviour
         }
     }
 
-    // 0 => EVATaskPanel
+    // 0 => DetailsPanel
     // 1 => NavigationSystem
-    // 2 => DetailsPanel
+    // 2 => Egress
+    // 3 => Ingress
+
     void ShowPanel(int panelIndex)
     {
         HideAllPanels();
@@ -56,11 +58,11 @@ public class CanvasUIManager : MonoBehaviour
         UIPanels[panelIndex].SetActive(false);
     }
 
-    void ShowHeaderPanel()
+    void show_top_menu()
     {
         headerPanel.SetActive(true);
     }
-    void HideHeaderPanel()
+    void hide_top_menu()
     {
         headerPanel.SetActive(false);
     }
@@ -72,5 +74,10 @@ public class CanvasUIManager : MonoBehaviour
     void HideToast()
     {
         toast.toastGameObject.SetActive(false);
+    }
+
+    public void on_suits_open_my_suit_HMD()
+    {
+        ShowPanel(0);
     }
 }

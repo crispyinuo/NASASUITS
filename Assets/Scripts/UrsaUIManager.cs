@@ -7,7 +7,8 @@ using System.Linq;
 using UnityEngine.Windows.Speech;
 using Microsoft.MixedReality.Toolkit.Audio;
 
-enum SPEAKING_STATE {
+enum SPEAKING_STATE
+{
     USER_SPEAKING,
     URSA_SPEAKING,
     NO_ONE_SPEAKING
@@ -26,6 +27,7 @@ public class UrsaUIManager : MonoBehaviour
     private DictationRecognizer dictationRecognizer;
     private bool isListening = false;
     private SPEAKING_STATE speakingState = SPEAKING_STATE.NO_ONE_SPEAKING;
+    Color32 warningColor = new Color32(255, 92, 0, 255); // red
 
     // Hide everything initially
     void Start()
@@ -43,6 +45,7 @@ public class UrsaUIManager : MonoBehaviour
                 startDictationRecognizer();
                 break;
             case SPEAKING_STATE.URSA_SPEAKING: // Ursa is speaking
+            case SPEAKING_STATE.WARNING:
                 if (!textToSpeech.IsSpeaking())
                 {
                     speakingState = SPEAKING_STATE.NO_ONE_SPEAKING;
@@ -213,12 +216,21 @@ public class UrsaUIManager : MonoBehaviour
                 ursaImage.enabled = true;
                 ursaText.enabled = true;
                 panel.SetActive(true);
+                ursaText.color = Color.white;
                 break;
             case SPEAKING_STATE.URSA_SPEAKING: // Ursa is speaking
                 ursaImage.sprite = ursaSpeakingSprite;
                 ursaImage.enabled = true;
                 ursaText.enabled = true;
                 panel.SetActive(true);
+                ursaText.color = Color.white;
+                break;
+            case SPEAKING_STATE.WARNING:
+                ursaImage.sprite = ursaSpeakingSprite;
+                ursaImage.enabled = true;
+                ursaText.enabled = true;
+                panel.SetActive(true);
+                ursaText.color = warningColor; // Use warning color
                 break;
             case SPEAKING_STATE.NO_ONE_SPEAKING: // No one is speaking
                 ursaImage.enabled = false;
@@ -244,4 +256,15 @@ public class UrsaUIManager : MonoBehaviour
         speakingState = SPEAKING_STATE.USER_SPEAKING;
     }
 
+    public void setWarningText(string warningText)
+    {
+        setText(warningText);
+        speakingState = SPEAKING_STATE.WARNING;
+        textToSpeech.StartSpeaking(warningText);
+    }
+
+    public void on_suits_get_incorrect_request_HMD()
+    {
+        setOutputText("Incorrect data request, please refine your question");
+    }
 }
