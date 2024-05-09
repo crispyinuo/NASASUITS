@@ -9,6 +9,7 @@ using Microsoft.MixedReality.Toolkit.Audio;
 
 enum SPEAKING_STATE
 {
+    WARNING,//casuing error message 
     USER_SPEAKING,
     URSA_SPEAKING,
     NO_ONE_SPEAKING

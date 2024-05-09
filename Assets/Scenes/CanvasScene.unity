@@ -11642,12 +11642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c0047dee51c5e4bb05e75d5351f968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userTransform: {fileID: 0}
-  lineRenderer: {fileID: 0}
-  pathPoints: []
-  graph: {fileID: 0}
-  startPositionIndex: 0
-  recordInterval: 1
 --- !u!1 &734056948
 GameObject:
   m_ObjectHideFlags: 0
@@ -12338,32 +12332,12 @@ MonoBehaviour:
   - {fileID: 1118738293}
   - {fileID: 144783271}
   - {fileID: 570602424}
-  task5SubPanels:
-  - {fileID: 697803150}
-  - {fileID: 1247188902}
-  - {fileID: 1647779622}
-  task5bStepsText:
-  - {fileID: 41655988}
-  - {fileID: 759302565}
-  - {fileID: 882057984}
-  task5cStepsText:
-  - {fileID: 1017289589}
-  - {fileID: 1110947120}
-  - {fileID: 1038672417}
-  task6StepsText:
-  - {fileID: 96146469}
-  - {fileID: 677092859}
-  task7StepsText:
-  - {fileID: 946668151}
-  - {fileID: 136280882}
-  - {fileID: 521024403}
-  - {fileID: 111822169}
-  - {fileID: 1366312529}
-  - {fileID: 1816221662}
-  - {fileID: 568793931}
-  task8StepsText:
-  - {fileID: 990692209}
-  - {fileID: 458005097}
+  task5SubPanels: []
+  task5bStepsText: []
+  task5cStepsText: []
+  task6StepsText: []
+  task7StepsText: []
+  task8StepsText: []
   ursaUIManager: {fileID: 1844152394}
   taskHighlights:
   - {fileID: 976273410}
@@ -23339,6 +23313,7 @@ GameObject:
   - component: {fileID: 1351366876}
   - component: {fileID: 1351366875}
   - component: {fileID: 1351366874}
+  - component: {fileID: 1351366877}
   m_Layer: 5
   m_Name: Button_pinMyLoc
   m_TagString: Untagged
@@ -23448,6 +23423,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351366872}
   m_CullTransparentMesh: 1
+--- !u!114 &1351366877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351366872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd460a880ef066644bdb125473c7fdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  user: {fileID: 295687023}
 --- !u!1 &1357538419
 GameObject:
   m_ObjectHideFlags: 0
