@@ -16,12 +16,17 @@ public class DisplayMapImageEditor : Editor
         {
             script.on_navigation_open_map_HMD();
         }
+        if (GUILayout.Button("Close Map"))
+        {
+            script.CloseMap();
+        }
     }
 }
 public class DisplayMapImage : MonoBehaviour
 {
     public Image uiImage; // Assign this in the Inspector
     public string jsonFilePath; // Path to the JSON file, set this in the Inspector
+    public Sprite defaultMapBackground;//when close the map, set it to default background
 
     public void on_navigation_open_map_HMD()
     {
@@ -51,6 +56,10 @@ public class DisplayMapImage : MonoBehaviour
         {
             Debug.LogError("Failed to read or parse JSON file: " + e.Message);
         }
+    }
+    public void CloseMap(){
+        uiImage.sprite = defaultMapBackground;
+
     }
 
     public void DisplayBase64Image(string base64)
