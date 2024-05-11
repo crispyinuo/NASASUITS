@@ -20,6 +20,14 @@ public class DisplayMapImageEditor : Editor
         {
             script.CloseMap();
         }
+        if (GUILayout.Button("Turn off Navi system"))
+        {
+            script.CloseNavigationSystem();
+        }
+        if (GUILayout.Button("Turn on Navi system"))
+        {
+            script.CloseNavigationSystem();
+        }
     }
 }
 public class DisplayMapImage : MonoBehaviour
@@ -27,6 +35,8 @@ public class DisplayMapImage : MonoBehaviour
     public Image uiImage; // Assign this in the Inspector
     public string jsonFilePath; // Path to the JSON file, set this in the Inspector
     public Sprite defaultMapBackground;//when close the map, set it to default background
+    
+    public GameObject NaviSystem;
 
     public void on_navigation_open_map_HMD()
     {
@@ -61,7 +71,12 @@ public class DisplayMapImage : MonoBehaviour
         uiImage.sprite = defaultMapBackground;
 
     }
-
+    public void CloseNavigationSystem(){
+        NaviSystem.SetActive(false);
+    }
+    public void OpenNavigationSystem(){
+        NaviSystem.SetActive(true);
+    }
     public void DisplayBase64Image(string base64)
     {
         byte[] imageData = Convert.FromBase64String(base64);

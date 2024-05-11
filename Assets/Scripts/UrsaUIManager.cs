@@ -183,6 +183,14 @@ public class UrsaUIManager : MonoBehaviour
         setInputText(text);
         Debug.Log("Hypo: " + text);
     }
+    public void SetMessageToPinMyLocation(){
+        //hardcoded here 
+        ursaText.text = "Your location has been pinned";
+    }
+       public void SetMessageToRemoveMyLocation(){
+        //hardcoded here 
+        ursaText.text = "Your location has been removed";
+    }
 
     private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
     {

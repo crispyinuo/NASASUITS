@@ -49,6 +49,7 @@ public class PinUserLocationEditor : Editor
 public class PinUserLocation : MonoBehaviour
 {
     public GameObject user;
+    public UrsaUIManager ursaUIManager;
 
     // Dictionary to store pin number and location
     private Dictionary<int, Vector3> userPinnedLocations = new Dictionary<int, Vector3>();
@@ -56,14 +57,11 @@ public class PinUserLocation : MonoBehaviour
 
     void Start()
     {
-        //clear data at start 
         userPinnedLocations.Clear();
     }
 
-    // Method to pin the current location of the user
     public void PinMyLocation()
 {
-    // Get the current position of the user GameObject
     Vector3 currentUserPosition = user.transform.position;
 
     // Add the location to the dictionary with the next available pin number
@@ -72,11 +70,11 @@ public class PinUserLocation : MonoBehaviour
 
     // Increment the pin number for the next use
     nextPinNumber++;
+    ursaUIManager.SetMessageToPinMyLocation();
 }
 
 public void PinMyLocation(int pinNumber)
 {
-    // Get the current position of the user GameObject
     Vector3 currentUserPosition = user.transform.position;
 
     // Check if the specified pin number already exists
@@ -99,6 +97,7 @@ public void PinMyLocation(int pinNumber)
         // Update nextPinNumber if necessary to avoid future conflicts
         nextPinNumber = Mathf.Max(nextPinNumber, pinNumber + 1);
     }
+    ursaUIManager.SetMessageToPinMyLocation();
 }
 
     public void on_navigation_remove_pin(int pinNum)
@@ -107,6 +106,7 @@ public void PinMyLocation(int pinNumber)
         if (userPinnedLocations.ContainsKey(pinNum))
         {
             userPinnedLocations.Remove(pinNum);
+            ursaUIManager.SetMessageToRemoveMyLocation();
             Debug.Log("Removed pin number: " + pinNum);
         }
         else
