@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="UIA-UNITY" size="1.200000 1.372294" />
+    <ImageTarget name="middle_part_unity" size="0.300000 0.246526" />
+    <ImageTarget name="middle_part_small" size="0.100000 0.082175" />
+    <ImageTarget name="middle_part" size="0.400000 0.328702" />
+    <ImageTarget name="image0" size="0.200000 0.228716" />
+    <ImageTarget name="UIA-full" size="1.000000 1.143579" />
+    <ImageTarget name="pwr-left-normal-size" size="1.000000 0.729302" />
+    <ImageTarget name="ev1-waste-normal-size" size="1.000000 2.048598" />
+    <ImageTarget name="ev1-supply-normal-size" size="1.000000 1.928187" />
+    <ImageTarget name="caution-normal-size" size="1.000000 0.479604" />
+    <ImageTarget name="ev1-waste" size="0.200000 0.409720" />
+    <ImageTarget name="ev1-supply" size="0.200000 0.385637" />
+    <ImageTarget name="pwr-left" size="0.200000 0.145860" />
+    <ImageTarget name="uia" size="0.200000 0.095921" />
+  </Tracking>
+</QCARConfig>
