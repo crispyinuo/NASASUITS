@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Overlay
+  - task4
+  - task2
+  - task3
+  - task1
+  - task4-1
+  - task4-2
+  - task5-1
+  - task5-2
+  - task6
   layers:
   - Default
   - TransparentFX

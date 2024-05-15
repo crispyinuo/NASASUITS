@@ -23,6 +23,8 @@ public class EgressTaskManager : MonoBehaviour
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
 
+    public DefaultObserverEventHandler defaultObserverEventHandler;
+
     void Start()
     {
         HideAllTasks();
@@ -205,6 +207,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(0);
         HighlightStep(1, task1StepsText);
+        defaultObserverEventHandler.AssignTagName("Task1");
         ursaUIManager.setOutputText(display_string);
     }
 
@@ -218,6 +221,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(1);
         HighlightStep(0, task2StepsText);
+        defaultObserverEventHandler.AssignTagName("Task2");
         ursaUIManager.setOutputText(display_string);
     }
 
@@ -225,6 +229,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(2);
         HighlightStep(0, task3StepsText);
+        defaultObserverEventHandler.AssignTagName("Task3");
         ursaUIManager.setOutputText(display_string);
     }
 
@@ -232,6 +237,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(2);
         HighlightStep(1, task3StepsText);
+        defaultObserverEventHandler.AssignTagName("Task3");
         ursaUIManager.setOutputText(display_string);
     }
 
@@ -239,6 +245,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(2);
         HighlightStep(2, task3StepsText);
+        defaultObserverEventHandler.AssignTagName("Task3");
         ursaUIManager.setOutputText(display_string);
     }
 
@@ -247,6 +254,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3); //Task 4
         ShowSubTask(0, task4SubPanels); //SubTask a
         HighlightStep(0, task4aStepsText); //Step 1
+        defaultObserverEventHandler.AssignTagName("Task4-1");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4a2_HMD(string display_string)
@@ -254,6 +262,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(0, task4SubPanels);
         HighlightStep(1, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-1");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4a3_HMD(string display_string)
@@ -261,6 +270,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(0, task4SubPanels);
         HighlightStep(2, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-1");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4a4_HMD(string display_string)
@@ -268,6 +278,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(0, task4SubPanels);
         HighlightStep(3, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-1");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4b1_HMD(string display_string)
@@ -275,6 +286,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(1, task4SubPanels);
         HighlightStep(0, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-2");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4b2_HMD(string display_string)
@@ -282,6 +294,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(1, task4SubPanels);
         HighlightStep(1, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-2");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4b3_HMD(string display_string)
@@ -289,6 +302,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(1, task4SubPanels);
         HighlightStep(2, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-2");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4b4_HMD(string display_string)
@@ -296,6 +310,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(3);
         ShowSubTask(1, task4SubPanels);
         HighlightStep(3, task4aStepsText);
+        defaultObserverEventHandler.AssignTagName("Task4-2");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_4c_HMD(string display_string)
@@ -308,12 +323,14 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(4);
         ShowSubTask(0, task5SubPanels);
+        defaultObserverEventHandler.AssignTagName("Task5-1");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_5b1_HMD(string display_string)
     {
         ShowTask(4);
         ShowSubTask(1, task5SubPanels);
+        defaultObserverEventHandler.AssignTagName("Task5-2");
         HighlightStep(0, task5bStepsText);
         ursaUIManager.setOutputText(display_string);
     }
@@ -322,6 +339,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(4);
         ShowSubTask(1, task5SubPanels);
         HighlightStep(1, task5bStepsText);
+        defaultObserverEventHandler.AssignTagName("Task5-2");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_5b3_HMD(string display_string)
@@ -329,6 +347,7 @@ public class EgressTaskManager : MonoBehaviour
         ShowTask(4);
         ShowSubTask(1, task5SubPanels);
         HighlightStep(2, task5bStepsText);
+        defaultObserverEventHandler.AssignTagName("Task5-2");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_5c1_HMD(string display_string)
@@ -362,6 +381,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(5);
         HighlightStep(1, task6StepsText);
+        defaultObserverEventHandler.AssignTagName("Task6");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_7a_HMD(string display_string)
@@ -411,6 +431,7 @@ public class EgressTaskManager : MonoBehaviour
     {
         ShowTask(7);
         HighlightStep(0, task8StepsText);
+        defaultObserverEventHandler.AssignTagName("Task8");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_8b_HMD(string display_string)

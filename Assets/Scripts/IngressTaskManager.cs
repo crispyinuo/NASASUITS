@@ -15,6 +15,9 @@ public class IngressTaskManager : MonoBehaviour
     public UrsaUIManager ursaUIManager;
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
+
+    public DefaultObserverEventHandler defaultObserverEventHandler;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -148,6 +151,7 @@ public class IngressTaskManager : MonoBehaviour
     {
         ShowTask(1);
         HighlightStep(0, task2StepsText);
+        defaultObserverEventHandler.AssignTagName("in-task2");
         ursaUIManager.setOutputText(display_string);
     }
 
@@ -168,6 +172,7 @@ public class IngressTaskManager : MonoBehaviour
     {
         ShowTask(2);
         ShowSubTask(0, task3SubPanels);
+        defaultObserverEventHandler.AssignTagName("in-task3");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_ingress_menu_do_subtask_3b_HMD(string display_string)
@@ -182,6 +187,7 @@ public class IngressTaskManager : MonoBehaviour
         ShowTask(2);
         ShowSubTask(1, task3SubPanels);
         HighlightStep(1, task3bStepsText);
+        defaultObserverEventHandler.AssignTagName("in-task3");
         ursaUIManager.setOutputText(display_string);
     }
     public void on_ingress_menu_do_subtask_3d_HMD(string display_string)
@@ -195,6 +201,7 @@ public class IngressTaskManager : MonoBehaviour
     {
         ShowTask(3);
         HighlightStep(0, task4StepsText);
+        defaultObserverEventHandler.AssignTagName("in-task4");
         ursaUIManager.setOutputText(display_string);
     }
 
