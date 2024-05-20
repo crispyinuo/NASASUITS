@@ -252,7 +252,7 @@ public class EgressTaskManager : MonoBehaviour
 
     public void on_geosampling_menu_check_current_rock_HMD(string display_string)
     {
-        //TODO: Zeo plz fill out this part
+         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)
     {
