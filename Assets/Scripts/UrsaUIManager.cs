@@ -187,10 +187,16 @@ public class UrsaUIManager : MonoBehaviour
         //hardcoded here 
         ursaText.text = "Your location has been pinned";
     }
-       public void SetMessageToRemoveMyLocation(){
+    public void SetMessageToRemoveMyLocation(){
         //hardcoded here 
         ursaText.text = "Your location has been removed";
     }
+    public void DisplayBackendMessage(string display){
+        //hardcoded here 
+        ursaText.text = display;
+    }
+    
+    
 
     private void DictationRecognizer_DictationComplete(DictationCompletionCause cause)
     {

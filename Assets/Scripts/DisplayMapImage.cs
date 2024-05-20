@@ -26,7 +26,7 @@ public class DisplayMapImageEditor : Editor
         }
         if (GUILayout.Button("Turn on Navi system"))
         {
-            script.CloseNavigationSystem();
+            script.OpenNavigationSystem();
         }
     }
 }

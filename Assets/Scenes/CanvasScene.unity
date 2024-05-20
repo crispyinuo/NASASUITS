@@ -12981,6 +12981,8 @@ MonoBehaviour:
   - {fileID: 596576466}
   defaultObserverEventHandler: {fileID: 0}
   pinUserLocation: {fileID: 1351366878}
+  displayMapImage: {fileID: 293976908}
+  navigationManager: {fileID: 1242697392}
 --- !u!4 &759152291
 Transform:
   m_ObjectHideFlags: 0

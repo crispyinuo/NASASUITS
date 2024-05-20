@@ -26,6 +26,8 @@ public class EgressTaskManager : MonoBehaviour
 
     public DefaultObserverEventHandler defaultObserverEventHandler;
     public PinUserLocation pinUserLocation;
+    public DisplayMapImage displayMapImage;
+    public NavigationManager navigationManager;
 
     void Start()
     {
@@ -242,12 +244,14 @@ public class EgressTaskManager : MonoBehaviour
     }
     public void on_navigation_close_map_HMD(string display_string)
     {
-        
+        displayMapImage.CloseNavigationSystem();
+        ursaUIManager.DisplayBackendMessage(display_string);
     }
 
     public void on_navigation_return_to_airlock_HMD(string display_string)
     {
-        
+        navigationManager.ShowWayBack();
+        ursaUIManager.DisplayBackendMessage(" ");
     }
 
     public void on_geosampling_menu_check_current_rock_HMD(string display_string)
