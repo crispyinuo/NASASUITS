@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using System.Text.RegularExpressions;
 
+using System.Text.RegularExpressions;
+#if UNITY_EDITOR
+using UnityEditor;
 [CustomEditor(typeof(PinUserLocation))]
 public class PinUserLocationEditor : Editor
 {
@@ -57,7 +58,7 @@ public class PinUserLocationEditor : Editor
         }
     }
 }
-
+#endif
 public class PinUserLocation : MonoBehaviour
 {
     public GameObject user;

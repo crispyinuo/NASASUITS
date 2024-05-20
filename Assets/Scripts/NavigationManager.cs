@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+
 using System.Linq;
 
-
+#if UNITY_EDITOR
+using UnityEditor;
 // [CustomEditor(typeof(NavigationManager))]
 // public class NavigationManagerEditor : Editor
 // {
@@ -29,7 +30,7 @@ using System.Linq;
 //         }
 //     }
 // }
-
+#endif
 
 public class NavigationManager : MonoBehaviour
 {

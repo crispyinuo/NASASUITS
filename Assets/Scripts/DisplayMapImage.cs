@@ -2,7 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.IO; // Include for file operations
+#if UNITY_EDITOR
+
 using UnityEditor;
+
 [CustomEditor(typeof(DisplayMapImage))]
 public class DisplayMapImageEditor : Editor
 {
@@ -30,6 +33,7 @@ public class DisplayMapImageEditor : Editor
         }
     }
 }
+#endif
 public class DisplayMapImage : MonoBehaviour
 {
     public Image uiImage; // Assign this in the Inspector
