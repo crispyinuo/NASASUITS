@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2650,7 +2650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010323724}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!64 &136208855
 MeshCollider:
@@ -11438,7 +11438,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010323724}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!64 &711075968
 MeshCollider:
@@ -12976,6 +12976,7 @@ MonoBehaviour:
   - {fileID: 596576466}
   - {fileID: 596576466}
   defaultObserverEventHandler: {fileID: 0}
+  pinUserLocation: {fileID: 1351366878}
 --- !u!4 &759152291
 Transform:
   m_ObjectHideFlags: 0
@@ -13822,7 +13823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010323724}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!64 &789897203
 MeshCollider:
@@ -14187,7 +14188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Let\u2019s start the Egress Task 1"
+  m_text: Your location has been removed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14296,7 +14297,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010323724}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!64 &808645022
 MeshCollider:
@@ -17133,7 +17134,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010323724}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!64 &987411655
 MeshCollider:
@@ -17623,7 +17624,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1010323723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1010323726}
@@ -21221,7 +21222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46091ba43c217fc42977558e51a57a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1226372462}
+  player: {fileID: 1731454572}
   interval: 1
   userPositionData: {fileID: 11400000, guid: 14ff3807d4532a543bbe872109e4aa9c, type: 2}
   recordedPositions: []
@@ -25101,6 +25102,7 @@ GameObject:
   - component: {fileID: 1351366875}
   - component: {fileID: 1351366874}
   - component: {fileID: 1351366877}
+  - component: {fileID: 1351366878}
   m_Layer: 5
   m_Name: Button_pinMyLoc
   m_TagString: Untagged
@@ -25219,9 +25221,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351366872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd460a880ef066644bdb125473c7fdd1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f19c7f94c794c5097d8bd11e39c750d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpinSpeed: 5
+  RotationRange: 15
+  Motion: 0
+--- !u!114 &1351366878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351366872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621ada584b6d0d148b78e5458597f7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  user: {fileID: 1731454571}
+  ursaUIManager: {fileID: 1844152394}
 --- !u!1 &1357538419
 GameObject:
   m_ObjectHideFlags: 0
@@ -25234,6 +25253,7 @@ GameObject:
   - component: {fileID: 1357538423}
   - component: {fileID: 1357538422}
   - component: {fileID: 1357538421}
+  - component: {fileID: 1357538424}
   m_Layer: 5
   m_Name: Button_removePin
   m_TagString: Untagged
@@ -25343,6 +25363,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357538419}
   m_CullTransparentMesh: 1
+--- !u!114 &1357538424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357538419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621ada584b6d0d148b78e5458597f7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  user: {fileID: 1731454571}
+  ursaUIManager: {fileID: 1844152394}
 --- !u!1 &1362364772
 GameObject:
   m_ObjectHideFlags: 0
@@ -28249,7 +28283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1519466983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32678,7 +32712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1834839121
 RectTransform:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,12 +25,30 @@ public class EgressTaskManager : MonoBehaviour
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
 
     public DefaultObserverEventHandler defaultObserverEventHandler;
+    public PinUserLocation pinUserLocation;
 
     void Start()
     {
         HideAllTasks();
         // Show Task 1 by default, should comment this line out when testing
         ShowTask(0);
+        EnsurePinUserLocationReference();
+    }
+    void EnsurePinUserLocationReference()
+    {
+        if (pinUserLocation == null)
+        {
+            pinUserLocation = FindObjectOfType<PinUserLocation>();
+
+            if (pinUserLocation != null)
+            {
+                Debug.Log("PinUserLocation script found and assigned.");
+            }
+            else
+            {
+                Debug.LogError("PinUserLocation script not found in the scene.");
+            }
+        }
     }
 
     void Update()
@@ -190,12 +209,51 @@ public class EgressTaskManager : MonoBehaviour
             case "on_egress_menu_do_subtask_8b_HMD":
                 on_egress_menu_do_subtask_8b_HMD(displayString);
                 break;
+            case "on_geosampling_menu_check_current_rock_HMD":
+                on_geosampling_menu_check_current_rock_HMD(displayString);
+                break; 
+            case "on_navigation_remove_pin_HMD":
+                on_navigation_remove_pin_HMD(displayString);
+                break;
+            case "on_navigation_close_map_HMD":
+                on_navigation_close_map_HMD(displayString);
+                break;
+            case "on_navigation_pin_my_location_HMD":
+                on_navigation_pin_my_location_HMD(displayString);
+                break;
+            case "on_navigation_return_to_airlock_HMD":
+                on_navigation_return_to_airlock_HMD(displayString);
+                break;
             default:
                 Debug.Log("Function name does not match any defined method");
                 break;
         }
     }
+    public void on_navigation_remove_pin_HMD(string display_string)
+    {
+        //https://github.com/ivanismz/SUITS-BACKEND/blob/main/navigationTasks.js
+        pinUserLocation.on_navigation_remove_pin_HMD(display_string);
 
+        
+    }
+    public void on_navigation_pin_my_location_HMD(string display_string)
+    {
+        pinUserLocation.on_navigation_pin_my_location_HMD(display_string);
+    }
+    public void on_navigation_close_map_HMD(string display_string)
+    {
+        
+    }
+
+    public void on_navigation_return_to_airlock_HMD(string display_string)
+    {
+        
+    }
+
+    public void on_geosampling_menu_check_current_rock_HMD(string display_string)
+    {
+        //TODO: Zeo plz fill out this part
+    }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)
     {
         ShowTask(0); // Show Task 1

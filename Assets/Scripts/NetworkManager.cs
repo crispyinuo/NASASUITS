@@ -15,12 +15,14 @@ public class UserCommand
 public class NetworkResponseParameter
 {
     public string display_string;
+    //add my backend 
 }
 
 [Serializable]
 public class NetworkResponse
 {
-    public string function;
+    public string function; //backend not just string
+    //TODO: define rock 1 and 2 
     public NetworkResponseParameter parameter;
 }
 
