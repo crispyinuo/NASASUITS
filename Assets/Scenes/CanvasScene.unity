@@ -4919,6 +4919,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a8e8ccd9ce4404b83a5f6eaabe69f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiImage: {fileID: 293976906}
+  jsonFilePath: Assets/Data/MapData.json
+  defaultMapBackground: {fileID: 21300000, guid: 1f57441c73f435b4988aa5587df46b6c, type: 3}
+  NaviSystem: {fileID: 1900024064}
 --- !u!1 &295687023
 GameObject:
   m_ObjectHideFlags: 0

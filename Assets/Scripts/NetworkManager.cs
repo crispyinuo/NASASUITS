@@ -4,6 +4,12 @@ using WebSocketSharp;
 using WebSocketSharp.Net;
 using System.Collections.Generic;
 using UnityEngine;
+[Serializable]
+public class Identity
+{
+    public string identity = "hololens_conn";
+}
+
 
 [Serializable]
 public class UserCommand
@@ -30,17 +36,40 @@ public class NetworkManager : MonoBehaviour
     private NetworkResponse response;
     WebSocket webSocket;
     // Start is called before the first frame update
+    // void Start()
+    // {
+    //     webSocket = new WebSocket("wss://free-square-garfish.ngrok-free.app");
+    //     webSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+    //     webSocket.SslConfiguration.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+    //     webSocket.OnOpen += (sender, e) => {Debug.Log("Opened connection!");};
+    //     webSocket.OnError += (sender, e) => {Debug.Log("Error: " + e.Message);};
+    //     webSocket.OnMessage += (sender, e) => 
+    //     {
+    //         Debug.Log($"Message Received, Data : {e.Data}");
+    //         response = JsonUtility.FromJson<NetworkResponse>(e.Data);     
+    //     };
+    //     webSocket.OnClose += (sender, e) =>
+    //     {
+    //         Debug.Log("Connection Closed.");
+    //     };
+    //     webSocket.Connect();
+    //     webSocket.WaitTime = System.TimeSpan.MaxValue;
+    //     Debug.Log(webSocket.ReadyState);
+    // }
     void Start()
     {
-        webSocket = new WebSocket("wss://free-square-garfish.ngrok-free.app");
+        webSocket = new WebSocket("wss://active-mantis-causal.ngrok-free.app");
         webSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
         webSocket.SslConfiguration.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-        webSocket.OnOpen += (sender, e) => {Debug.Log("Opened connection!");};
+        webSocket.OnOpen += (sender, e) => {
+            Debug.Log("Opened connection!");
+            webSocket.Send(JsonUtility.ToJson(new Identity()));
+        };
         webSocket.OnError += (sender, e) => {Debug.Log("Error: " + e.Message);};
-        webSocket.OnMessage += (sender, e) => 
+        webSocket.OnMessage += (sender, e) =>
         {
             Debug.Log($"Message Received, Data : {e.Data}");
-            response = JsonUtility.FromJson<NetworkResponse>(e.Data);     
+            response = JsonUtility.FromJson<NetworkResponse>(e.Data);
         };
         webSocket.OnClose += (sender, e) =>
         {
@@ -50,6 +79,8 @@ public class NetworkManager : MonoBehaviour
         webSocket.WaitTime = System.TimeSpan.MaxValue;
         Debug.Log(webSocket.ReadyState);
     }
+
+
 
     // Update is called once per frame
     void Update()
