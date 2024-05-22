@@ -19,6 +19,7 @@ public class EgressTaskManager : MonoBehaviour
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
     public DisplayMapImage displayMapImage;
     public string imageString;
+    public PinUserLocation pinUserLocation;
     void Start()
     {
         HideAllTasks();
@@ -136,6 +137,16 @@ public class EgressTaskManager : MonoBehaviour
             case "on_navigation_close_map_HMD":
                 on_navigation_close_map_HMD(displayString);
                 break;
+            case "on_navigation_pin_my_location_HMD":
+                on_navigation_pin_my_location_HMD(displayString);
+                break;
+            case "on_navigation_remove_pin_HMD":
+                on_navigation_remove_pin_HMD(displayString);
+                break;
+                
+            // case "on_navigation_return_to_airlock_HMD":
+            //     on_navigation_return_to_airlock_HMD(displayString);
+            //     break;
             default:
                 Debug.Log("Function name does not match any defined method");
                 break;
@@ -153,6 +164,22 @@ public class EgressTaskManager : MonoBehaviour
         Debug.Log("close map");
         displayMapImage.CloseNavigationSystem();
         //ursaUIManager.DisplayBackendMessage(display_string);
+        ursaUIManager.setOutputText(display_string);
+
+    }
+    public void on_navigation_pin_my_location_HMD(string display_string)
+    {
+        pinUserLocation.on_navigation_pin_my_location_HMD(display_string);
+        displayMapImage.OpenNavigationSystem();
+        displayMapImage.DisplayBase64Image(imageString);
+        ursaUIManager.setOutputText(display_string);
+
+    }
+    public void on_navigation_remove_pin_HMD(string display_string)
+    {
+        pinUserLocation.on_navigation_remove_pin_HMD(display_string);
+        displayMapImage.OpenNavigationSystem();
+        displayMapImage.DisplayBase64Image(imageString);
         ursaUIManager.setOutputText(display_string);
 
     }
