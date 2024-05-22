@@ -2,38 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.IO; // Include for file operations
-#if UNITY_EDITOR
-
 using UnityEditor;
 
-[CustomEditor(typeof(DisplayMapImage))]
-public class DisplayMapImageEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector(); // Draws the default inspector
-
-        DisplayMapImage script = (DisplayMapImage)target;
-
-        if (GUILayout.Button("Display Map"))
-        {
-            script.on_navigation_open_map_HMD();
-        }
-        if (GUILayout.Button("Close Map"))
-        {
-            script.CloseMap();
-        }
-        if (GUILayout.Button("Turn off Navi system"))
-        {
-            script.CloseNavigationSystem();
-        }
-        if (GUILayout.Button("Turn on Navi system"))
-        {
-            script.OpenNavigationSystem();
-        }
-    }
-}
-#endif
 public class DisplayMapImage : MonoBehaviour
 {
     public Image uiImage; // Assign this in the Inspector
