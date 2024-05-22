@@ -81,12 +81,19 @@ public class DisplayMapImage : MonoBehaviour
     }
     public void DisplayBase64Image(string base64)
     {
+// Check and remove the prefix if it exists
         if (base64.StartsWith("data:image/png;base64,"))
-    {
-        // Remove the prefix if it exists
-        //base64 = base64.Replace("data:image/png;base64,", "");
-        base64 = Regex.Replace(base64, @"^data:image\/png;base64,","");
-    }
+        {
+            base64 = Regex.Replace(base64, @"^data:image\/png;base64,", "");
+        }
+        else if (base64.StartsWith("data:image/jpeg;base64,"))
+        {
+            base64 = Regex.Replace(base64, @"^data:image\/jpeg;base64,", "");
+        }
+        else if (base64.StartsWith("data:image/jpg;base64,"))
+        {
+            base64 = Regex.Replace(base64, @"^data:image\/jpg;base64,", "");
+        }
         byte[] imageData = Convert.FromBase64String(base64);
         Texture2D texture = new Texture2D(2, 2);
         if (texture.LoadImage(imageData))
