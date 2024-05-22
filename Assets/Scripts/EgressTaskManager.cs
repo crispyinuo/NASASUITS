@@ -144,13 +144,15 @@ public class EgressTaskManager : MonoBehaviour
     public void on_navigation_close_map_HMD(string display_string)
     {
         displayMapImage.CloseNavigationSystem();
-        ursaUIManager.DisplayBackendMessage(display_string);
+        //ursaUIManager.DisplayBackendMessage(display_string);
+        ursaUIManager.setOutputText(display_string);
+
     }
     public void on_navigation_open_map_HMD(string display_string)
     {
         displayMapImage.OpenNavigationSystem();//to open the map UI
         displayMapImage.on_navigation_open_map_HMD();//to display map
-        ursaUIManager.DisplayBackendMessage(display_string);
+        ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)
     {
