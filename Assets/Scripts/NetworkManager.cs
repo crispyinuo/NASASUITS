@@ -41,31 +41,34 @@ public class NetworkManager : MonoBehaviour
     //     webSocket = new WebSocket("wss://free-square-garfish.ngrok-free.app");
     //     webSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
     //     webSocket.SslConfiguration.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-    //     webSocket.OnOpen += (sender, e) => {Debug.Log("Opened connection!");};
-    //     webSocket.OnError += (sender, e) => {Debug.Log("Error: " + e.Message);};
+    //     webSocket.OnOpen += (sender, e) => {Debug.LogError("Opened connection!");};
+    //     webSocket.OnError += (sender, e) => {Debug.LogError("Error: " + e.Message);};
     //     webSocket.OnMessage += (sender, e) => 
     //     {
-    //         Debug.Log($"Message Received, Data : {e.Data}");
+    //         Debug.LogError($"Message Received, Data : {e.Data}");
     //         response = JsonUtility.FromJson<NetworkResponse>(e.Data);     
     //     };
     //     webSocket.OnClose += (sender, e) =>
     //     {
-    //         Debug.Log("Connection Closed.");
+    //         Debug.LogError("Connection Closed.");
     //     };
     //     webSocket.Connect();
     //     webSocket.WaitTime = System.TimeSpan.MaxValue;
-    //     Debug.Log(webSocket.ReadyState);
+    //     Debug.LogError(webSocket.ReadyState);
     // }
     void Start()
     {
-        webSocket = new WebSocket("wss://active-mantis-causal.ngrok-free.app");
-        webSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
-        webSocket.SslConfiguration.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
+        webSocket = new WebSocket("ws://192.168.1.49:80");
+        // webSocket.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+        // webSocket.SslConfiguration.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
         webSocket.OnOpen += (sender, e) => {
             Debug.Log("Opened connection!");
             webSocket.Send(JsonUtility.ToJson(new Identity()));
         };
-        webSocket.OnError += (sender, e) => {Debug.Log("Error: " + e.Message);};
+        webSocket.OnError += (sender, e) => 
+        {
+            Debug.Log("Error: " + e.Message);
+        };
         webSocket.OnMessage += (sender, e) =>
         {
             Debug.Log($"Message Received, Data : {e.Data}");
@@ -109,12 +112,12 @@ public class NetworkManager : MonoBehaviour
     {
         if (webSocket == null || !webSocket.IsAlive)
         {
-            Debug.Log("Command is not sent!!! The websocket is not alive:(");
+            Debug.LogError("Command is not sent!!! The websocket is not alive:(");
             return;
         }
         UserCommand command = new UserCommand();
         command.user_input = message;
         webSocket.Send(JsonUtility.ToJson(command));
-        Debug.Log($"Command sent: {message}");
+        Debug.LogError($"Command sent: {message}");
     }
 }
