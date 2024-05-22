@@ -12969,6 +12969,7 @@ MonoBehaviour:
   task7StepsText: []
   task8StepsText: []
   ursaUIManager: {fileID: 1844152394}
+  canvasUIManager: {fileID: 6355945}
   taskHighlights:
   - {fileID: 976273410}
   - {fileID: 1909943579}
@@ -22766,6 +22767,7 @@ MonoBehaviour:
   - {fileID: 1320857157}
   - {fileID: 734056951}
   ursaUIManager: {fileID: 1844152394}
+  canvasUIManager: {fileID: 6355945}
   taskHighlights:
   - {fileID: 1489559945}
   - {fileID: 1281118604}
@@ -34465,7 +34467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1900024065
 RectTransform:
   m_ObjectHideFlags: 0

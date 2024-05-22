@@ -47,7 +47,7 @@ public class CanvasUIManager : MonoBehaviour
     // 2 => Egress
     // 3 => Ingress
 
-    void ShowPanel(int panelIndex)
+    public void ShowPanel(int panelIndex)
     {
         HideAllPanels();
         UIPanels[panelIndex].SetActive(true);

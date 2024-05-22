@@ -13,6 +13,7 @@ public class IngressTaskManager : MonoBehaviour
     public TextMeshProUGUI[] task3bStepsText;
     public TextMeshProUGUI[] task4StepsText;
     public UrsaUIManager ursaUIManager;
+    public CanvasUIManager canvasUIManager;
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
 
@@ -49,6 +50,7 @@ public class IngressTaskManager : MonoBehaviour
 
     void ShowTask(int taskIndex)
     {
+        canvasUIManager.ShowPanel(3);
         HideAllTasks();
         taskPanels[taskIndex].SetActive(true);
         HideAllHighlights();
@@ -57,6 +59,7 @@ public class IngressTaskManager : MonoBehaviour
 
     void ShowSubTask(int taskIndex, GameObject[] subPanels)
     {
+        canvasUIManager.ShowPanel(3);
         HideAllSubTasks(subPanels);
         subPanels[taskIndex].SetActive(true);
     }
