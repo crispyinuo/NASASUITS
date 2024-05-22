@@ -145,6 +145,7 @@ public class EgressTaskManager : MonoBehaviour
     public void GetMapImgString(string image)
     {
         imageString = image;
+        Debug.Log("Base64 string starts with: " + imageString.Substring(0, 50)); // Check initial characters
     }
 
     public void on_navigation_close_map_HMD(string display_string)
