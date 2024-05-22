@@ -135,12 +135,34 @@ public class EgressTaskManager : MonoBehaviour
             case "on_navigation_close_map_HMD":
                 on_navigation_close_map_HMD(displayString);
                 break;
+            case "on_geosampling_start":
+                on_geosampling_start();
+                break;
+            case "on_geosampling_menu_check_current_rock_HMD":
+                on_geosampling_menu_check_current_rock_HMD(displayString);
+                break;
+
+            // case "on_navigation_return_to_airlock_HMD":
+            //     on_navigation_return_to_airlock_HMD(displayString);
+            //     break;
             default:
                 Debug.Log("Function name does not match any defined method");
                 break;
         }
     }
+    public void on_geosampling_start()
+    {
+        ursaUIManager.setOutputText("Say Ursa check current rock after scanning each rock");
+    }
 
+    public void on_geosampling_menu_check_current_rock_HMD(string display_string)
+    {
+        // In TSS, pull the scanned rock’s information 
+        // Find the rock that matches the scanned rock’s name and id
+        // Match the value of each composition, determine whether the rock’s value is normal or not
+        ursaUIManager.setOutputText(display_string);
+        Debug.Log("geosampling.");
+    }
     public void on_navigation_close_map_HMD(string display_string)
     {
         Debug.Log("close map");
