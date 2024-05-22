@@ -130,7 +130,7 @@ public class EgressTaskManager : MonoBehaviour
                 onEgressMenuDoSubtask4c(displayString);
                 break;
             case "on_navigation_open_map_HMD":
-                on_navigation_close_map_HMD(displayString);
+                on_navigation_open_map_HMD(displayString);
                 break;
             case "on_navigation_close_map_HMD":
                 on_navigation_close_map_HMD(displayString);
@@ -143,6 +143,7 @@ public class EgressTaskManager : MonoBehaviour
 
     public void on_navigation_close_map_HMD(string display_string)
     {
+        Debug.Log("close map");
         displayMapImage.CloseNavigationSystem();
         //ursaUIManager.DisplayBackendMessage(display_string);
         ursaUIManager.setOutputText(display_string);
@@ -150,8 +151,9 @@ public class EgressTaskManager : MonoBehaviour
     }
     public void on_navigation_open_map_HMD(string display_string)
     {
+        Debug.Log("open map");
         displayMapImage.OpenNavigationSystem();//to open the map UI
-        displayMapImage.on_navigation_open_map_HMD();//to display map
+        //displayMapImage.Display_map_HMD();//to display map
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)

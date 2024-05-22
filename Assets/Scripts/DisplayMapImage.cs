@@ -15,7 +15,7 @@ public class DisplayMapImageEditor : Editor
 
         if (GUILayout.Button("Display Map"))
         {
-            script.on_navigation_open_map_HMD();
+            script.Display_map_HMD();
         }
 
             //script.CloseMap();
@@ -39,7 +39,7 @@ public class DisplayMapImage : MonoBehaviour
     
     public GameObject NaviSystem;
 
-    public void on_navigation_open_map_HMD()
+    public void Display_map_HMD()
     {
         Debug.Log("Update Map Image to HMD UI");
         if (string.IsNullOrEmpty(jsonFilePath) || !File.Exists(jsonFilePath))
