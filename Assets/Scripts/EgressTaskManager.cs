@@ -163,7 +163,6 @@ public class EgressTaskManager : MonoBehaviour
     {
         Debug.Log("close map");
         displayMapImage.CloseNavigationSystem();
-        //ursaUIManager.DisplayBackendMessage(display_string);
         ursaUIManager.setOutputText(display_string);
 
     }
@@ -187,8 +186,10 @@ public class EgressTaskManager : MonoBehaviour
     {
         Debug.Log("open map");
         displayMapImage.OpenNavigationSystem();//to open the map UI
-        //displayMapImage.Display_map_HMD();//to display map
-        displayMapImage.DisplayBase64Image(imageString);
+        displayMapImage.Display_map_HMD();//to display map
+        if(imageString != null){
+            displayMapImage.DisplayBase64Image(imageString);
+        }
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)
