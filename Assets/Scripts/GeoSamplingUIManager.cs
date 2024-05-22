@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class GeoSamplingUIManager : MonoBehaviour
 {
@@ -24,8 +26,8 @@ public class GeoSamplingUIManager : MonoBehaviour
             case "on_geosampling_start":
                 on_geosampling_start();
                 break;
-            case "on_geosampling_menu_check_current_rock":
-                on_geosampling_menu_check_current_rock(displayString);
+            case "on_geosampling_menu_check_current_rock_HMD":
+                on_geosampling_menu_check_current_rock_HMD(displayString);
                 break;
             default:
                 Debug.Log("Function name does not match any defined method");
@@ -38,7 +40,7 @@ public class GeoSamplingUIManager : MonoBehaviour
         ursaUIManager.setOutputText("Say Ursa check current rock after scanning each rock");
     }
 
-    public void on_geosampling_menu_check_current_rock(string display_string)
+    public void on_geosampling_menu_check_current_rock_HMD(string display_string)
     {
         // In TSS, pull the scanned rock’s information 
         // Find the rock that matches the scanned rock’s name and id
