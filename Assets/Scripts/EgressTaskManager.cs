@@ -18,6 +18,7 @@ public class EgressTaskManager : MonoBehaviour
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
     public DisplayMapImage displayMapImage;
+    public string imageString;
     void Start()
     {
         HideAllTasks();
@@ -140,6 +141,11 @@ public class EgressTaskManager : MonoBehaviour
                 break;
         }
     }
+    
+    public void GetMapImgString(string image)
+    {
+        imageString = image;
+    }
 
     public void on_navigation_close_map_HMD(string display_string)
     {
@@ -154,6 +160,7 @@ public class EgressTaskManager : MonoBehaviour
         Debug.Log("open map");
         displayMapImage.OpenNavigationSystem();//to open the map UI
         //displayMapImage.Display_map_HMD();//to display map
+        displayMapImage.DisplayBase64Image(imageString);
         ursaUIManager.setOutputText(display_string);
     }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)

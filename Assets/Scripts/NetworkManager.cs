@@ -96,6 +96,8 @@ public class NetworkManager : MonoBehaviour
         {
             EgressTaskManager manager = egressTaskManager.GetComponent<EgressTaskManager>();
             manager.ExecuteTask(response.function, response.parameter.display_string);
+            //TODO: quick hack, need fix - Yunting
+            manager.GetMapImgString(response.parameter.display_string);
             response = null;
         }
     }
