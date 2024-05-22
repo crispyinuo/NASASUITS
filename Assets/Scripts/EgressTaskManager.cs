@@ -17,7 +17,7 @@ public class EgressTaskManager : MonoBehaviour
     public UrsaUIManager ursaUIManager;
     public Image[] taskHighlights;
     Color32 noHighlightWhiteColor = new Color32(255, 255, 255, 100);
-
+    public DisplayMapImage displayMapImage;
     void Start()
     {
         HideAllTasks();
@@ -129,12 +129,29 @@ public class EgressTaskManager : MonoBehaviour
             case "onEgressMenuDoSubtask4c":
                 onEgressMenuDoSubtask4c(displayString);
                 break;
+            case "on_navigation_open_map_HMD":
+                on_navigation_close_map_HMD(displayString);
+                break;
+            case "on_navigation_close_map_HMD":
+                on_navigation_close_map_HMD(displayString);
+                break;
             default:
                 Debug.Log("Function name does not match any defined method");
                 break;
         }
     }
 
+    public void on_navigation_close_map_HMD(string display_string)
+    {
+        displayMapImage.CloseNavigationSystem();
+        ursaUIManager.DisplayBackendMessage(display_string);
+    }
+    public void on_navigation_open_map_HMD(string display_string)
+    {
+        displayMapImage.OpenNavigationSystem();//to open the map UI
+        displayMapImage.on_navigation_open_map_HMD();//to display map
+        ursaUIManager.DisplayBackendMessage(display_string);
+    }
     public void on_egress_menu_do_subtask_1a_HMD(string display_string)
     {
         ShowTask(0); // Show Task 1

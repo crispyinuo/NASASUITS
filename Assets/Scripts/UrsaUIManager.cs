@@ -243,5 +243,11 @@ public class UrsaUIManager : MonoBehaviour
         setText(inputText);
         speakingState = SPEAKING_STATE.USER_SPEAKING;
     }
+    public void DisplayBackendMessage(string display){
+        //hardcoded here 
+        ursaText.text = display;
+    }
+    
+    
 
 }
